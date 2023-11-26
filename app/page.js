@@ -1,113 +1,166 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
+import { ArrowBack, ArrowForward } from "./ui/button";
+import itemData from "./lib/data";
+import ArtCategory from "./ui/arts-carousel";
+import Artists from "./ui/artists-carousel";
+
+const Hero = () => {
+  return (
+    <div className=" flex flex-col-reverse lg:flex-row lg:mt-[9vh] lg:min-h-[91vh] bg-neutral mt-[22vh] min-h-[90vh]">
+      <div className="flex-1">
+        <p
+          dir="rtl"
+          className="flex-1 text-2xl text-base-200 tracking-[.12em] mt-2 lg:mt-52 lg:ms-20 font-bold lg:text-3xl lg:text-base-200 text-center lg:text-start"
+        >
+          Discover Masterpieces
+        </p>
+        <div
+          dir="rtl"
+          className="flex-1 mt-8 lg:mb-16 lg:ms-20 text-base-200 text-center lg:text-start"
+        >
+          <p className="tracking-[.38em] mt-8 mb-6">
+            Find the artwork
+            <br />
+            .you want
+          </p>
+          <button className="btn w-20 lg:h-12 lg:w-44 btn-primary rounded-full text-neutral">
+            Find
+          </button>
+        </div>
+        <div
+          dir="ltr"
+          className="flex-1 mt-8 lg:ms-20 text-base-200 text-center lg:text-start"
+        >
+          <p className="tracking-[.38em] mb-6">
+            Showcase your
+            <br />
+            artwork.
+          </p>
+          <button className="btn w-20 mb-8 lg:h-12 lg:w-44 btn-primary rounded-full text-neutral">
+            Sell
+          </button>
+        </div>
+      </div>
+      <div className="flex-1 lg:flex-shrink-0 p-4">
+        <Image
+          src="/hero-image.jpg"
+          alt="hero"
+          width={1920}
+          height={1080}
+          className="object-cover w-full h-full rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
+  );
+};
+
+const AuctionArea = () => {
+  return (
+    <div className="mt-32" id="auction-area">
+      <div className="min-h-[10vh] text-center p-4">
+        <a className="text-2xl tracking-[.2em] mt-2 text-base-200 font-bold lg:text-5xl">
+          Auction
+        </a>
+      </div>
+      <div className="flex gap-8 items-center justify-center min-h-[80vh] bg-neutral">
+        <ArrowBack buttonColor={"btn-primary"}/>
+        <Card
+          className="flex-1 p-8 bg-primary text-base-200"
+          sx={{ maxWidth: 1133 }}
+        >
+          <CardActionArea>
+            <div className="grid grid-cols-4 gap-4 grid">
+              {itemData.map((item, index) =>
+                item.title === "Painting1" ? (
+                  <img
+                    key={index}
+                    src={`${item.img}`}
+                    alt={item.title}
+                    loading="lazy"
+                    height="140"
+                    className={
+                      "rounded hover:scale-105 transform transition-all duration-500 ease-in-out row-span-2 col-span-2"
+                    }
+                  />
+                ) : (
+                  <div
+                    key={index}
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    className={
+                      "rounded hover:scale-105 transform transition-all duration-500 ease-in-out"
+                    }
+                  />
+                )
+              )}
+            </div>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Painting
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Albums : City Views <br />
+                Live on Dec at 08.00 PM WIB
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+        <ArrowForward buttonColor={"btn-primary"}/>
+      </div>
+    </div>
+  );
+};
+
+const ArtsArea = () => {
+  return (
+    <div className="bg-neutral mt-32" id="arts-area">
+      <div className="min-h-[10vh] p-4 ">
+        <p className="text-2xl tracking-[.2em] text-center text-base-200 font-bold mb-16 lg:text-5xl">
+          Arts
+        </p>
+        <ArtCategory category="Painting" isColorBgLight={true} />
+        <ArtCategory category="Sculpture" isColorBgLight={true} />
+        <ArtCategory category="Digital Art" isColorBgLight={true} />
+        <ArtCategory category="Photography" isColorBgLight={true} />
+      </div>
+    </div>
+  );
+};
+
+const ArtistsArea = () => {
+  return (
+    <div className="bg-neutral mt-32" id="artists-area">
+      <div className="min-h-[10vh] p-4 ">
+        <p className="text-2xl tracking-[.2em] text-center text-base-200 font-bold mb-16 lg:text-5xl">
+          Artists
+        </p>
+        <div className="bg-primary w-[100%] rounded p-4">
+          <Artists isColorBgLight={false} />
+          <Artists isColorBgLight={false}/>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <div className="bg-neutral">
+      <Hero />
+      <AuctionArea />
+      <ArtsArea />
+      <ArtistsArea />
+    </div>
+  );
 }
