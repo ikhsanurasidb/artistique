@@ -1,11 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
 import Logo from "./artistique-logo";
 import Link from "next/link";
 import { SignUpButton, LoginButton } from "./button";
-import LogInPage from "../login/page";
 
 const ArtistiqueLogo = () => {
   return (
