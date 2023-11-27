@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { ArrowBack, ArrowForward } from "./ui/button";
-import itemData from "./lib/data";
+import itemData from "./lib/data.ts";
 import ArtCategory from "./ui/arts-carousel";
 import Artists from "./ui/artists-carousel";
 
@@ -18,7 +18,7 @@ const Hero = () => {
           dir="rtl"
           className="flex-1 text-2xl text-base-200 tracking-[.12em] mt-2 lg:mt-52 lg:ms-20 font-bold lg:text-3xl lg:text-base-200 text-center lg:text-start"
         >
-          Discover Masterpieces
+          Discover Masterpieces TEST
         </p>
         <div
           dir="rtl"

@@ -4,11 +4,8 @@ import Image from "next/image";
 import React from "react";
 import Logo from "./artistique-logo";
 import Link from "next/link";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import { LoginButton, SignUpButton } from "./button";
+import { SignUpButton, LoginButton } from "./button";
+import LogInPage from "../login/page";
 
 const ArtistiqueLogo = () => {
   return (
@@ -128,120 +125,11 @@ const CartAndProfile = () => {
             <a>Settings</a>
           </li>
           <li>
-            <a>Logout</a>
+            <p>Logout</p>
           </li>
         </ul>
       </div>
     </div>
-  );
-};
-
-const Login = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <React.Fragment>
-      <LoginButton action={handleClickOpen} />
-      <Dialog open={open} onClose={handleClose}>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="outlined-size-small"
-            label="Email Address"
-            type="email"
-            fullWidth
-            size="small"
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="outlined-size-small"
-            label="Password"
-            type="password"
-            fullWidth
-            size="small"
-          />
-        </DialogContent>
-        <DialogActions>
-          <div className="m-4">
-            <LoginButton action={handleClose} />
-          </div>
-        </DialogActions>
-      </Dialog>
-    </React.Fragment>
-  );
-};
-
-const SignUp = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-  return (
-    <React.Fragment>
-      <SignUpButton action={handleClickOpen} />
-      <Dialog open={open} onClose={handleClose}>
-        <DialogContent>
-          <div className="flex flex-row justify-between gap-4">
-            <TextField
-              autoFocus
-              margin="dense"
-              id="outlined-size-small"
-              label="First Name"
-              type="name"
-              fullWidth
-              size="small"
-            />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="outlined-size-small"
-              label="Last Name"
-              type="name"
-              fullWidth
-              size="small"
-            />
-          </div>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="outlined-size-small"
-            label="Email Address"
-            type="email"
-            fullWidth
-            size="small"
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="outlined-size-small"
-            label="Password"
-            type="password"
-            fullWidth
-            size="small"
-          />
-        </DialogContent>
-        <DialogActions>
-          <div className="m-4">
-            <SignUpButton action={handleClose} />
-          </div>
-        </DialogActions>
-      </Dialog>
-    </React.Fragment>
   );
 };
 
@@ -250,8 +138,8 @@ const Navbar = () => {
     <div className="navbar glass flex flex-col lg:flex-row items-center gap-4 p-4 fixed top-0 w-full z-10">
       <ArtistiqueLogo />
       <Menu />
-      <Login />
-      <SignUp />
+      <LoginButton href="/login"/>
+      <SignUpButton href="/signup"/>
     </div>
   );
 };
