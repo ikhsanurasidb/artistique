@@ -18,7 +18,7 @@ const Hero = () => {
           dir="rtl"
           className="flex-1 text-2xl text-base-200 tracking-[.12em] mt-2 lg:mt-52 lg:ms-20 font-bold lg:text-3xl lg:text-base-200 text-center lg:text-start"
         >
-          Discover Masterpieces TEST
+          Discover Masterpieces
         </p>
         <div
           dir="rtl"
