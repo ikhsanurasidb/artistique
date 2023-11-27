@@ -6,8 +6,8 @@ export default function Main(){
         <br/>
         <br/>
         <br/>
-        <div>
-            <h1>This is page for Artists</h1>
+        <div className="bg-white">
+            <h1 className="text-base-200">This is page for Artists</h1>
         </div>
         </>
     )
