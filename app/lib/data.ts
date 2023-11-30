@@ -50,4 +50,4 @@ const itemData = [
   },
 ];
 
-export default itemData
+export default itemData;

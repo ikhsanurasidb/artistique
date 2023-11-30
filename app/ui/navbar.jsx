@@ -15,17 +15,17 @@ const ArtistiqueLogo = () => {
   );
 };
 
-const Menu = () => {
+export const Menu = () => {
   const links = [
     { name: "Arts", href: "/#arts-area" },
-    { name: "Artists", href: "/#artists-area" },
-    { name: "Auction", href: "/#auction-area" },
+    { name: "Artists", href: "/menu/artists" },
+    { name: "Auction", href: "/menu/auction" },
   ];
   const artsCategory = [
-    { name: "Painting" },
-    { name: "Sculpture" },
-    { name: "Graphic Arts" },
-    { name: "Photography" },
+    { name: "Painting", dir: "painting" },
+    { name: "Sculpture", dir: "sculpture" },
+    { name: "Graphic Arts", dir: "graphic" },
+    { name: "Photography", dir: "photography" },
   ];
 
   return (
@@ -48,7 +48,7 @@ const Menu = () => {
               >
                 {artsCategory.map((category) => (
                   <li key={category.name}>
-                    <a>{category.name}</a>
+                    <Link href={`/menu/arts/${category.dir}`}>{category.name}</Link>
                   </li>
                 ))}
               </ul>

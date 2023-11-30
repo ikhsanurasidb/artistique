@@ -33,7 +33,7 @@ const ArtCategory = ({ category, isColorBgLight }) => {
         <p className="text-xl text-base-200 mt-4">Nama Artist</p>
         <p className="text-neutral">Deskripsi singkat test 123 123321 qwertyoiuo</p>
         </div>
-        <Carousel carouselRef={carouselRef} textColor={textColor} />
+        <Carousel isCarousel={true} carouselRef={carouselRef} textColor={textColor} />
       </div>
       <div className="mt-2 mb-8">
         <div className="flex flex-row-reverse">

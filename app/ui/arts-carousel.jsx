@@ -10,6 +10,13 @@ const ArtCategory = ({ category, isColorBgLight }) => {
   const textColor = isColorBgLight ? "text-base-100" : "text-neutral";
   const buttonColor = isColorBgLight ? "btn-accent" : "btn-neutral";
 
+  const artsCategory = [
+    { name: "Painting", dir: "painting" },
+    { name: "Sculpture", dir: "sculpture" },
+    { name: "Graphic Arts", dir: "graphic" },
+    { name: "Photography", dir: "photography" },
+  ];
+
   const scrollCarousel = (direction) => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
@@ -18,15 +25,15 @@ const ArtCategory = ({ category, isColorBgLight }) => {
       });
     }
   };
-
+  console.log(artsCategory.dir)
   return (
     <div className="ml-20">
-      <Link href="">
+      <Link href={`/menu/arts/${artsCategory.dir}`}>
         <p className="text-xl text-base-200 underline underline-offset-8 mb-8">
           {category}
         </p>
       </Link>
-      <Carousel carouselRef={carouselRef} textColor={textColor} />
+      <Carousel isCarousel={true} carouselRef={carouselRef} textColor={textColor} />
       <div className="mt-2 mb-8">
         <div className="flex flex-row-reverse">
           <div onClick={() => scrollCarousel("right")}>
