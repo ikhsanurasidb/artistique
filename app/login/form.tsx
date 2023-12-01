@@ -1,19 +1,17 @@
 "use client";
 
 import { FormEvent } from "react";
+import { signIn } from "next-auth/react";
 
 export default function Form() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // const formData = new FormData(e.currentTarget);
-    // const response = await fetch("/api/auth/signup", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     email: formData.get("email"),
-    //     password: formData.get("password"),
-    //   }),
-    // });
-    // console.log(response);
+    const formData = new FormData(e.currentTarget);
+    signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      redirect: false,
+    });
   };
   return (
     <div className="hero min-h-screen bg-neutral">
@@ -27,7 +25,7 @@ export default function Form() {
           </p>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form className="card-body" onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium tracking-widest">
@@ -54,20 +52,11 @@ export default function Form() {
               </label>
             </div>
             <div className="form-control mt-6">
-              <LoginButton/>
+              <button className="btn btn-outline mt-4 w-full">Log in</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-  );
-}
-
-function LoginButton() {
-
-  return (
-    <button className="btn btn-outline mt-4 w-full">
-      Log in
-    </button>
   );
 }
