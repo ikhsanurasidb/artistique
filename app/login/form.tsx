@@ -2,16 +2,26 @@
 
 import { FormEvent } from "react";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function Form() {
+  const router = useRouter();
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    signIn("credentials", {
+    const response = await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
       redirect: false,
     });
+
+    console.log({ response });
+    if (!response.error) {
+      router.push("/");
+      router.refresh();
+    } else {
+      alert("Login failed");
+    }
   };
   return (
     <div className="hero min-h-screen bg-neutral">
@@ -32,7 +42,12 @@ export default function Form() {
                   Email
                 </span>
               </label>
-              <input type="email" className="input input-bordered" required />
+              <input
+                name="email"
+                type="email"
+                className="input input-bordered"
+                required
+              />
             </div>
             <div className="form-control">
               <label className="label">
@@ -41,6 +56,7 @@ export default function Form() {
                 </span>
               </label>
               <input
+                name="password"
                 type="password"
                 className="input input-bordered"
                 required
