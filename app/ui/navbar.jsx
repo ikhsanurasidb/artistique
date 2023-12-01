@@ -48,7 +48,9 @@ export const Menu = () => {
               >
                 {artsCategory.map((category) => (
                   <li key={category.name}>
-                    <Link href={`/menu/arts/${category.dir}`}>{category.name}</Link>
+                    <Link href={`/menu/arts/${category.dir}`}>
+                      {category.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -66,7 +68,7 @@ const CartAndProfile = () => {
       <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle">
           <div className="indicator">
-            <CartIcon/>
+            <CartIcon />
             <span className="badge badge-sm indicator-item">8</span>
           </div>
         </label>
@@ -78,9 +80,11 @@ const CartAndProfile = () => {
             <span className="font-bold text-lg">8 Items</span>
             <span className="text-neutral">Subtotal: $999</span>
             <div className="card-actions">
-              <button className="btn btn-primary btn-block text-neutral">
-                View cart
-              </button>
+              <Link href="../profile">
+                <button className="btn btn-primary btn-block text-neutral">
+                  View cart
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -88,12 +92,14 @@ const CartAndProfile = () => {
       <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <Image
-              alt="Tailwind CSS Navbar component"
-              width={30}
-              height={30}
-              src="/profile-icon.webp"
-            />
+            <Link href="../profile">
+              <Image
+                alt="Tailwind CSS Navbar component"
+                width={30}
+                height={30}
+                src="/profile-icon.webp"
+              />
+            </Link>
           </div>
         </label>
         <ul
@@ -123,8 +129,8 @@ const Navbar = () => {
     <div className="navbar glass flex flex-col lg:flex-row items-center gap-4 p-4 fixed top-0 w-full z-10">
       <ArtistiqueLogo />
       <Menu />
-      <LoginButton href="/login"/>
-      <SignUpButton href="/signup"/>
+      <LoginButton href="/login" />
+      <SignUpButton href="/signup" />
       <CartAndProfile />
     </div>
   );

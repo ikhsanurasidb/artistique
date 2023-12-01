@@ -63,7 +63,7 @@ export default function SignUpPage() {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-outline">Login</button>
+              <button className="btn btn-outline">Signup</button>
             </div>
           </form>
         </div>
