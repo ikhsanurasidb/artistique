@@ -25,7 +25,7 @@ export default function Main() {
           <LogoutRoundedIcon fontSize="large" />
         </div>
       </div>
-      <div className="h-[90vh] w-[0.1px] outline outline-1"></div>
+      <div className="h-[90vh] w-[0.1px] outline outline-1 outline-primary"></div>
       <div className="flex flex-col w-[75%] h-[75%] justify-center items-center gap-4 m-auto">
         <h1>- Profile -</h1>
         <div className="flex bg-accent w-[100%] h-[100%] m-auto rounded-xl">
