@@ -9,6 +9,8 @@ import { ArrowBack, ArrowForward } from "./ui/button";
 import itemData from "./lib/data.ts";
 import ArtCategory from "./ui/arts-carousel";
 import Artists from "./ui/artists-carousel";
+import Footer from "./ui/Footer";
+
 
 const Hero = () => {
   return (
@@ -200,6 +202,7 @@ export default function Home() {
       <AuctionArea />
       <ArtsArea />
       <ArtistsArea />
+      <Footer />
     </div>
   );
 }
