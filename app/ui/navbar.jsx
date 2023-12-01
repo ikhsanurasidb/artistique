@@ -80,10 +80,10 @@ const CartAndProfile = () => {
             <span className="font-bold text-lg">8 Items</span>
             <span className="text-neutral">Subtotal: $999</span>
             <div className="card-actions">
-              <Link href="../profile">
-                <button className="btn btn-primary btn-block text-neutral">
-                  View cart
-                </button>
+              <Link href="/profile/cart">
+              <button className="btn btn-primary btn-block text-neutral">
+                View cart
+              </button>
               </Link>
             </div>
           </div>
@@ -92,14 +92,12 @@ const CartAndProfile = () => {
       <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <Link href="../profile">
               <Image
                 alt="Tailwind CSS Navbar component"
                 width={30}
                 height={30}
                 src="/profile-icon.webp"
               />
-            </Link>
           </div>
         </label>
         <ul
@@ -107,10 +105,10 @@ const CartAndProfile = () => {
           className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-full lg:w-52"
         >
           <li>
-            <a className="justify-between">
+            <Link href="/profile" className="justify-between">
               Profile
               <span className="badge">New</span>
-            </a>
+            </Link>
           </li>
           <li>
             <a>Settings</a>
