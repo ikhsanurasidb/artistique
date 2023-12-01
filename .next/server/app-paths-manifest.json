@@ -1,9 +1,8 @@
 {
-  "/signup/page": "app/signup/page.js",
   "/login/page": "app/login/page.js",
-  "/menu/auction/page": "app/menu/auction/page.js",
+  "/signup/page": "app/signup/page.js",
   "/page": "app/page.js",
-  "/api/auth/signup/route": "app/api/auth/signup/route.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/profile/page": "app/profile/page.js"
+  "/menu/auction/page": "app/menu/auction/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/profile/cart/page": "app/profile/cart/page.js"
 }
