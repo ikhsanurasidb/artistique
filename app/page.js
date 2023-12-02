@@ -11,7 +11,6 @@ import ArtCategory from "./ui/arts-carousel";
 import Artists from "./ui/artists-carousel";
 import Footer from "./ui/Footer";
 
-
 const Hero = () => {
   return (
     <div className=" flex flex-col-reverse lg:flex-row lg:mt-[9vh] lg:min-h-[91vh] bg-neutral mt-[22vh] min-h-[90vh]">
@@ -195,6 +194,8 @@ const ArtistsArea = () => {
 //     </div>
 //   )
 // }
+
+
 
 export default function Home() {
   return (

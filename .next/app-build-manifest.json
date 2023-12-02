@@ -1,20 +1,17 @@
 {
   "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-<<<<<<< HEAD
     "/menu/auction/page": [
-=======
-    "/signup/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/signup/page.js"
-    ],
-    "/profile/layout": [
->>>>>>> 721c99af597f07ebe9bb14089c4cc0ffc0a137c3
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/menu/auction/page.js"
@@ -22,30 +19,7 @@
     "/menu/artists/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-<<<<<<< HEAD
       "static/chunks/app/menu/artists/page.js"
-=======
-      "static/chunks/app/profile/cart/page.js"
-    ],
-    "/profile/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/profile/page.js"
-    ],
-    "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
-    ],
-    "/menu/arts/sculpture/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/menu/arts/sculpture/page.js"
-    ],
-    "/menu/arts/painting/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/menu/arts/painting/page.js"
     ],
     "/menu/arts/graphic/page": [
       "static/chunks/webpack.js",
@@ -57,17 +31,30 @@
       "static/chunks/main-app.js",
       "static/chunks/app/menu/arts/photography/page.js"
     ],
-    "/layout": [
+    "/menu/arts/painting/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/app/menu/arts/painting/page.js"
     ],
-    "/menu/auction/page": [
+    "/menu/arts/sculpture/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/menu/auction/page.js"
->>>>>>> 721c99af597f07ebe9bb14089c4cc0ffc0a137c3
+      "static/chunks/app/menu/arts/sculpture/page.js"
+    ],
+    "/profile/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profile/page.js"
+    ],
+    "/profile/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profile/layout.js"
+    ],
+    "/profile/cart/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profile/cart/page.js"
     ]
   }
 }
