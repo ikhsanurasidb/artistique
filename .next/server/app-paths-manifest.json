@@ -1,7 +1,4 @@
 {
-  "/menu/auction/page": "app/menu/auction/page.js",
-  "/page": "app/page.js",
-  "/signup/page": "app/signup/page.js",
-  "/login/page": "app/login/page.js",
-  "/profile/sell/page": "app/profile/sell/page.js"
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js"
 }
