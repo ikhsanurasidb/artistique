@@ -2631,17 +2631,29 @@ input.tab:checked + .tab-content,
 .relative {
   position: relative;
 }
+.inset-0 {
+  inset: 0px;
+}
 .left-\[-5px\] {
   left: -5px;
 }
 .top-0 {
   top: 0px;
 }
+.right-\[-10px\] {
+  right: -10px;
+}
+.top-\[-30px\] {
+  top: -30px;
+}
 .z-10 {
   z-index: 10;
 }
 .z-\[1\] {
   z-index: 1;
+}
+.z-50 {
+  z-index: 50;
 }
 .col-span-2 {
   grid-column: span 2 / span 2;
@@ -2734,6 +2746,15 @@ input.tab:checked + .tab-content,
 }
 .mt-\[22vh\] {
   margin-top: 22vh;
+}
+.ml-\[-200px\] {
+  margin-left: -200px;
+}
+.ml-\[-80px\] {
+  margin-left: -80px;
+}
+.mr-\[-50px\] {
+  margin-right: -50px;
 }
 .inline-block {
   display: inline-block;
@@ -2836,6 +2857,21 @@ input.tab:checked + .tab-content,
 }
 .h-full {
   height: 100%;
+}
+.h-\[120px\] {
+  height: 120px;
+}
+.h-\[550px\] {
+  height: 550px;
+}
+.h-\[600px\] {
+  height: 600px;
+}
+.h-\[700px\] {
+  height: 700px;
+}
+.h-\[80\%\] {
+  height: 80%;
 }
 .min-h-\[10vh\] {
   min-height: 10vh;
@@ -2963,6 +2999,15 @@ input.tab:checked + .tab-content,
 .w-\[80vh\] {
   width: 80vh;
 }
+.w-\[120px\] {
+  width: 120px;
+}
+.w-\[468px\] {
+  width: 468px;
+}
+.w-\[950px\] {
+  width: 950px;
+}
 .min-w-\[17\.75rem\] {
   min-width: 17.75rem;
 }
@@ -3083,6 +3128,9 @@ input.tab:checked + .tab-content,
 .gap-\[20px\] {
   gap: 20px;
 }
+.overflow-y-auto {
+  overflow-y: auto;
+}
 .overflow-y-scroll {
   overflow-y: scroll;
 }
@@ -3176,6 +3224,10 @@ input.tab:checked + .tab-content,
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
@@ -3289,6 +3341,9 @@ input.tab:checked + .tab-content,
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-\[22px\] {
+  font-size: 22px;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -3353,6 +3408,9 @@ input.tab:checked + .tab-content,
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.opacity-50 {
+  opacity: 0.5;
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
