@@ -1,4 +1,4 @@
-// File: D:\BINUS\Binus SM 3\OOP\PKM-KC\artistique\app\layout.js
+// File: /Users/muhamamdnurasid/Documents/Semester 3/OOP/projek/artistique/app/layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
