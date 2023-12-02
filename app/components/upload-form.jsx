@@ -34,7 +34,7 @@ const UploadForm = () => {
 
   return (
     <>
-        <input type="file" accept="image/*" onSubmit={handleSubmit} onChange={handleFileChange} />
+        <input type="file" accept="image/*" onChange={handleFileChange} />
         <button type="submit" disabled={!file || uploading}>
           {uploading ? "Uploading..." : "Upload"}
         </button>

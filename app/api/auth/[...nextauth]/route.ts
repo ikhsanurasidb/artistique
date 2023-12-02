@@ -1,12 +1,12 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
+import type { NextAuthOptions } from 'next-auth'
 import { sql } from "@vercel/postgres";
 
-
-const handler = NextAuth({
+const authOptions: NextAuthOptions = {
   session: {
-    strategy: 'jwt',
+    strategy: "jwt",
   },
   pages: {
     signIn: "/login",
@@ -28,20 +28,21 @@ const handler = NextAuth({
           user?.password
         );
 
-        console.log({passwordCorrect});
+        console.log({ passwordCorrect });
 
-        if (passwordCorrect){
-          return{
+        if (passwordCorrect) {
+          return {
             id: user.id,
             email: user.email,
-          }
+          };
         }
 
-        console.log({credentials});
+        console.log({ credentials });
         return null;
       },
     }),
   ],
-}); 
+};
 
-export { handler as GET, handler as POST};
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };
