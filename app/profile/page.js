@@ -1,36 +1,5 @@
 import Image from "next/image";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
-import { Pool } from "@vercel/postgres";
-import { sql } from "@vercel/postgres";
-import { getServerSession } from "next-auth";
-
-let result;
-export async function getEmail() {
-  const session = await getServerSession();
-  console.log(session);
-
-  try {
-    result =
-      await sql`SELECT first_name, last_name FROM users WHERE email = ${session.email}`;
-
-    // if (result.rows.length > 0) {
-    //   return {
-    //     props: {
-    //       user: result.rows[0],
-    //     },
-    //   };
-    // } else {
-    //   return {
-    //     notFound: true,
-    //   };
-    // }
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      notFound: true,
-    };
-  }
-}
 
 export default function Main() {
   return (
