@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
 import { sql } from "@vercel/postgres";
 
+
 const handler = NextAuth({
   session: {
     strategy: 'jwt',
@@ -41,6 +42,6 @@ const handler = NextAuth({
       },
     }),
   ],
-});
+}); 
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, handler as authOptions };

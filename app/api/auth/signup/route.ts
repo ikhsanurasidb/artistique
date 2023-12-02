@@ -1,18 +1,18 @@
 import { NextResponse } from "next/server";
 import { hash } from "bcrypt";
-import { sql } from "@vercel/postgres"
+import { sql } from "@vercel/postgres";
 
 export async function POST(request: Request){
     try {
-        const {email, password} = await request.json();
+        const {first_name, last_name, email, password} = await request.json();
         //tambahkan disini jika mau validasi email dan password
-        console.log({email, password});
+        console.log({first_name, last_name, email, password});
 
         const hashedPassword = await hash(password, 10);
 
         const response = await sql`
-            INSERT INTO users (email, password)
-            VALUES (${email}, ${hashedPassword})
+            INSERT INTO users (first_name, last_name, email, password)
+            VALUES (${first_name}, ${last_name}, ${email}, ${hashedPassword})
         `;
     } catch (e) {
         console.log(e);

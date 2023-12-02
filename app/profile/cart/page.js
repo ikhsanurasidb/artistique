@@ -26,7 +26,7 @@ export default function Main() {
               <p className="text-[20px] font-semibold">Subtotal : </p>
             </div>
             <div className="h-[30%] w-[100%]">
-              <div className="h-[100%] flex justify-end items-end">
+              <div className="h-[100%] flex justify-center items-end">
                 <div className="h-[41px] w-[177px] rounded-[30px] bg-[#D9D9D9] flex justify-center items-center text-[19px] font-semibold cursor-pointer transition-transform transform hover:translate-y-[-3px] hover:bg-gray-500">Checkout</div>
               </div>
             </div>

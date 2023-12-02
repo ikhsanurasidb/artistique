@@ -9,6 +9,8 @@ export default function Form() {
     const response = await fetch("/api/auth/signup", {
       method: "POST",
       body: JSON.stringify({
+        first_name: formData.get("first_name"),
+        last_name: formData.get("last_name"),
         email: formData.get("email"),
         password: formData.get("password"),
       }),
@@ -36,6 +38,7 @@ export default function Form() {
                   </span>
                 </label>
                 <input
+                  name="first_name"
                   type="text"
                   className="input input-bordered w-[13.5rem]"
                   required
@@ -48,6 +51,7 @@ export default function Form() {
                   </span>
                 </label>
                 <input
+                  name="last_name"
                   type="text"
                   className="input input-bordered w-[13.5rem]"
                   required

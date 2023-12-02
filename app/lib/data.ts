@@ -1,5 +1,6 @@
 import { sql } from '@vercel/postgres';
 import { User } from './definitions.js';
+import { url } from 'inspector';
 
 export async function getUser(email: string) {
   try {
@@ -8,6 +9,25 @@ export async function getUser(email: string) {
   } catch (error) {
     console.error('Failed to fetch user:', error);
     throw new Error('Failed to fetch user.');
+  }
+}
+
+export const ConfigPath = [
+  {
+    "url": "https://artistique-filestorage.s3.ap-southeast-1.amazonaws.com/image/02%3A41%3A22+PM-36389.jpg"
+  },
+  {
+    "url": "https://artistique-filestorage.s3.ap-southeast-1.amazonaws.com/image/02%3A41%3A22+PM-36389.jpg"
+  }
+];
+
+export const UrlList = ConfigPath.map(item => item.url);
+
+export function savePathToConfig(path: string) {
+  try {
+    ConfigPath.push({"url" : `https://artistique-filestorage.s3.ap-southeast-1.amazonaws.com/${path}`})
+  } catch (error) {
+    console.error('Error saving path to config:', error);
   }
 }
 
