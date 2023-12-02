@@ -1,17 +1,14 @@
-import React from 'react';
-import { useModal } from '../popup/modalContext';
+import React from "react";
 
-export const DetailProductModal = () => {
-  const { isModalOpen, openModal, closeModal } = useModal();
-
+const ProductDetailPopup = ({ item, onClose }) => {
   return (
-    <div>
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-          <div className="h-[100%] w-[100%] relative flex justify-center items-center">
-      <div className="h-[750px] w-[1000px] rounded-2xl border border-solid border-border-[#ADB4BE] bg-[#8E99AA] bg-opacity-20 backdrop-blur-lg flex justify-center items-center" >
-        <div className="h-[650px] w-[900px] p-[35px] rounded-2xl bg-[#F7F7F7] flex justify-center items-center flex-col">
+    <div className="fixed inset-0 overflow-y-auto z-50 flex items-center justify-center">
+      <div className="fixed inset-0 bg-black opacity-50"></div>
+      <div className="relative z-50 bg-white p-8 rounded-lg">
+        {/* Add your product details here */}
+        <div className="h-[80%] w-[100%] relative flex justify-center items-center">
+      <div className="h-[650px] w-[950px] rounded-2xl border border-solid border-border-[#ADB4BE] bg-[#8E99AA] bg-opacity-20 backdrop-blur-lg flex justify-center items-center" >
+        <div className="h-[550px] w-[850px] p-[35px] rounded-2xl bg-[#F7F7F7] flex justify-center items-center flex-col">
           <div className="h-[315px] w-[100%] flex flex-row">
             <div className="h-[315px] w-[40%]">
               <div className="h-[300px] w-[300px] bg-[#B9BFC9] rounded-2xl flex justify-center items-center">
@@ -20,8 +17,9 @@ export const DetailProductModal = () => {
             </div>
             <div className="h-[315px] w-[60%] flex-col">
               <div className="h-[157.5px] w-[100%] pt-[30px]">
-                <p className="text-[36px] font-normal text-black">Patung Apa Ya Namanya</p>
-                <p className="text-[24px] font-bold text-black">Rp9.999.999</p>
+                <button className="h-[30px] w-[468px] text-[30px] text-black font-medium flex justify-end relative top-[-30px] right-[-10px] cursor-pointer" onClick={onClose}>X</button>
+                <p className="text-[36px] font-normal text-black">Patung Apa Ya Namanya </p>
+                <p className="text-[24px] font-bold text-black">Rp9.999.999 </p>
               </div>
               <div className="h-[157.5px] w-[100%] flex flex-col justify-end items-start pb-[30px]">
                 <div className="flex flex-row gap-[20px]">
@@ -43,10 +41,11 @@ export const DetailProductModal = () => {
         </div>
       </div>
     </div>
-          </div>
-          <button onClick={closeModal}>Close Modal</button>
-        </div>
-      )}
+        {/* Add your product details here */}
+      </div>
     </div>
   );
 };
+
+export default ProductDetailPopup;
+

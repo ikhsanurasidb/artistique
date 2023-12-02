@@ -11,15 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/profile/layout": [
+    "/menu/auction/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/profile/layout.js"
+      "static/chunks/app/menu/auction/page.js"
     ],
-    "/profile/cart/page": [
+    "/menu/artists/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/profile/cart/page.js"
+      "static/chunks/app/menu/artists/page.js"
     ]
   }
 }
