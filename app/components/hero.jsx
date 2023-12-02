@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Main() {
   return (
     <div
@@ -10,8 +12,14 @@ export default function Main() {
       <div className="hero-overlay bg-base-200 bg-opacity-20"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl text-neutral font-bold">Live Auction NOW!</h1>
-          <button className="btn btn-outline text-neutral">Enter the Room</button>
+          <h1 className="mb-5 text-5xl text-neutral font-bold">
+            Live Auction NOW!
+          </h1>
+          <Link href="../menu/auction/bid/">
+            <button className="btn btn-outline text-neutral">
+              Enter the Room
+            </button>
+          </Link>
         </div>
       </div>
     </div>

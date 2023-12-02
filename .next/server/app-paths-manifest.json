@@ -1,8 +1,8 @@
 {
-  "/signup/page": "app/signup/page.js",
   "/page": "app/page.js",
-  "/login/page": "app/login/page.js",
-  "/api/upload-karya/route": "app/api/upload-karya/route.js",
-  "/profile/sell/page": "app/profile/sell/page.js",
-  "/profile/page": "app/profile/page.js"
+  "/menu/arts/painting/page": "app/menu/arts/painting/page.js",
+  "/menu/auction/bid/page": "app/menu/auction/bid/page.js",
+  "/menu/auction/page": "app/menu/auction/page.js",
+  "/profile/cart/page": "app/profile/cart/page.js",
+  "/profile/sell/page": "app/profile/sell/page.js"
 }
