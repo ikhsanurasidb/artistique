@@ -2717,8 +2717,17 @@ input.tab:checked + .tab-content,
 .ml-20 {
   margin-left: 5rem;
 }
+.ml-\[-200px\] {
+  margin-left: -200px;
+}
+.ml-\[-80px\] {
+  margin-left: -80px;
+}
 .mr-16 {
   margin-right: 4rem;
+}
+.mr-\[-50px\] {
+  margin-right: -50px;
 }
 .mt-2 {
   margin-top: 0.5rem;
@@ -2747,6 +2756,7 @@ input.tab:checked + .tab-content,
 .mt-\[22vh\] {
   margin-top: 22vh;
 }
+<<<<<<< HEAD
 .ml-\[-200px\] {
   margin-left: -200px;
 }
@@ -2756,6 +2766,8 @@ input.tab:checked + .tab-content,
 .mr-\[-50px\] {
   margin-right: -50px;
 }
+=======
+>>>>>>> 16412d8e5bed5b4fe0f2ed3e3174a50c44f9bd1b
 .inline-block {
   display: inline-block;
 }
@@ -2786,14 +2798,14 @@ input.tab:checked + .tab-content,
 .h-\[100px\] {
   height: 100px;
 }
+.h-\[120px\] {
+  height: 120px;
+}
 .h-\[157\.5px\] {
   height: 157.5px;
 }
 .h-\[1px\] {
   height: 1px;
-}
-.h-\[20\%\] {
-  height: 20%;
 }
 .h-\[250px\] {
   height: 250px;
@@ -2828,6 +2840,15 @@ input.tab:checked + .tab-content,
 .h-\[50px\] {
   height: 50px;
 }
+<<<<<<< HEAD
+=======
+.h-\[550px\] {
+  height: 550px;
+}
+.h-\[600px\] {
+  height: 600px;
+}
+>>>>>>> 16412d8e5bed5b4fe0f2ed3e3174a50c44f9bd1b
 .h-\[60vh\] {
   height: 60vh;
 }
@@ -2836,6 +2857,9 @@ input.tab:checked + .tab-content,
 }
 .h-\[70\%\] {
   height: 70%;
+}
+.h-\[700px\] {
+  height: 700px;
 }
 .h-\[70vh\] {
   height: 70vh;
@@ -2858,6 +2882,7 @@ input.tab:checked + .tab-content,
 .h-full {
   height: 100%;
 }
+<<<<<<< HEAD
 .h-\[120px\] {
   height: 120px;
 }
@@ -2873,6 +2898,8 @@ input.tab:checked + .tab-content,
 .h-\[80\%\] {
   height: 80%;
 }
+=======
+>>>>>>> 16412d8e5bed5b4fe0f2ed3e3174a50c44f9bd1b
 .min-h-\[10vh\] {
   min-height: 10vh;
 }
@@ -2920,6 +2947,9 @@ input.tab:checked + .tab-content,
 }
 .w-\[10vh\] {
   width: 10vh;
+}
+.w-\[120px\] {
+  width: 120px;
 }
 .w-\[13\.5rem\] {
   width: 13.5rem;
@@ -2996,6 +3026,7 @@ input.tab:checked + .tab-content,
 .w-full {
   width: 100%;
 }
+<<<<<<< HEAD
 .w-\[80vh\] {
   width: 80vh;
 }
@@ -3008,6 +3039,8 @@ input.tab:checked + .tab-content,
 .w-\[950px\] {
   width: 950px;
 }
+=======
+>>>>>>> 16412d8e5bed5b4fe0f2ed3e3174a50c44f9bd1b
 .min-w-\[17\.75rem\] {
   min-width: 17.75rem;
 }
@@ -3321,6 +3354,9 @@ input.tab:checked + .tab-content,
 .text-\[20px\] {
   font-size: 20px;
 }
+.text-\[22px\] {
+  font-size: 22px;
+}
 .text-\[24px\] {
   font-size: 24px;
 }
@@ -3340,9 +3376,6 @@ input.tab:checked + .tab-content,
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.text-\[22px\] {
-  font-size: 22px;
 }
 .font-bold {
   font-weight: 700;
