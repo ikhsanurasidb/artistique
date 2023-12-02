@@ -12,6 +12,7 @@ export default function Main() {
               </div>
               <div className="text-[22px] font-semibold ml-[-200px]">
                 <p>Nama Product</p>
+                
               </div>
               <div className="text-[22px] font-semibold mr-[-50px]">
                 <p>$9999</p>
