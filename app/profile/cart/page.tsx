@@ -15,7 +15,7 @@ export default function Main() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://https://artistique-nt.vercel.app/api/getFromDB", {
+        const res = await fetch("http://artistique-nt.vercel.app/api/getFromDB", {
           method: "GET",
         });
 
