@@ -1,6 +1,7 @@
 {
-  "/menu/artists/page": "app/menu/artists/page.js",
   "/page": "app/page.js",
   "/login/page": "app/login/page.js",
-  "/profile/sell/page": "app/profile/sell/page.js"
+  "/api/getFromDB/route": "app/api/getFromDB/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/profile/cart/page": "app/profile/cart/page.js"
 }
