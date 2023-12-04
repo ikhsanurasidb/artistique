@@ -10,7 +10,7 @@ export async function GET() {
     // 
     const result = await sql`
           SELECT nama_karya, deskripsi, harga, image_url FROM carts
-          WHERE email = 'ikhsan@binus'
+          WHERE email = ${session.user.email}
         `;
     const products = result.rows;
 

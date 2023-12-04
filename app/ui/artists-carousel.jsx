@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { ArrowBack, ArrowForward } from "./button";
 import Link from "next/link";
-import Carousel from "./carousel";
+import Carousel from "./carousel.tsx";
 import Image from "next/image";
 
 const ArtCategory = ({ category, isColorBgLight }) => {

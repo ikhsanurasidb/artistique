@@ -15,7 +15,7 @@ export default function Main() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3003/api/getFromDB", {
+        const res = await fetch("/api/getFromDB", {
           method: "GET",
         });
 

@@ -1,7 +1,8 @@
 {
   "/page": "app/page.js",
-  "/login/page": "app/login/page.js",
+  "/menu/auction/page": "app/menu/auction/page.js",
+  "/menu/arts/painting/page": "app/menu/arts/painting/page.js",
+  "/menu/arts/photography/page": "app/menu/arts/photography/page.js",
   "/api/getFromDB/route": "app/api/getFromDB/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/profile/cart/page": "app/profile/cart/page.js"
 }
