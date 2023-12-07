@@ -81,7 +81,7 @@ const AuctionArea = () => {
           sx={{ maxWidth: 1133 }}
         >
           <CardActionArea>
-            <div className="grid grid-cols-4 gap-4 grid">
+            <div className="grid grid-cols-4 gap-4 s">
               {itemData.map((item, index) =>
                 item.title === "Painting1" ? (
                   <img

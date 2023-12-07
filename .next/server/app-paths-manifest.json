@@ -1,8 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/menu/auction/page": "app/menu/auction/page.js",
-  "/menu/arts/painting/page": "app/menu/arts/painting/page.js",
-  "/menu/arts/photography/page": "app/menu/arts/photography/page.js",
-  "/api/getFromDB/route": "app/api/getFromDB/route.js",
-  "/profile/cart/page": "app/profile/cart/page.js"
+  "/page": "app/page.js"
 }
