@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Image from "next/image";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
@@ -34,7 +35,7 @@ export default function Main() {
   }, []);
 
   console.log(profileData);
-  
+
   return (
     <div className="flex flex-col w-[75%] h-[75%] justify-center items-center gap-4 m-auto">
       <h1>- Profile -</h1>
@@ -42,11 +43,12 @@ export default function Main() {
         <div className="grid grid-cols-2 gap-8 m-auto content-center">
           <div className="flex flex-col justify-end items-end">
             <div className="w-[300px] h-[300px] glass p-4 rounded-md">
-              <Image
+              <img
                 src={profileData[0]?.image_url}
                 width={300}
                 height={300}
-                alt="profile-photo"
+                alt="Profile-photo. 
+                Please upload a photo if you haven't already."
                 className="rounded-md"
               />
             </div>
@@ -65,7 +67,9 @@ export default function Main() {
           <div className="grid grid-rows-5 gap-4">
             <div>
               <p>Nama</p>
-              <p>{profileData[0]?.first_name} {profileData[0]?.last_name}</p>
+              <p>
+                {profileData[0]?.first_name} {profileData[0]?.last_name}
+              </p>
             </div>
             <div>
               <p>Email</p>
