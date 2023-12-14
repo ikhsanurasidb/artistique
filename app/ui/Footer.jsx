@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
     return (
-      <div data-aos="zoom-out-up" data-aos-duration="1000" className="h-[60vh] w-[100vw] bg-[#8E99AA] relative flex flex-col ">
+      <div data-aos="zoom-out-up" data-aos-duration="1000" data-aos-once="true" className="h-[60vh] w-[100vw] bg-[#8E99AA] relative flex flex-col ">
         <div className="h-[50%] w-[100vw] pl-[80px] pt-[80px]">
           <div className="h-[50px] w-[400px]"><ArtistiqueLogo /></div>
           <p className="h-[100px] w-[350px] text-[16px] font-medium">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce dui leo, imperdiet in,aliquam sit amet, feugiat eu, orci.</p>
