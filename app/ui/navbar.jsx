@@ -127,7 +127,7 @@ const CartAndProfile = () => {
 export default async function Navbar(){
   const session = await getServerSession();
   return (
-    <div className="navbar glass flex flex-col lg:flex-row items-center gap-4 p-4 fixed top-0 w-full z-10">
+    <div className="navbar glass flex flex-col lg:flex-row items-center gap-4 p-4 fixed top-0 w-[100vw] z-10">
       <ArtistiqueLogo />
       <Menu />
       {!session && (

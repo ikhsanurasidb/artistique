@@ -11,13 +11,13 @@ const Tabs = () => {
   };
 
   return (
-    <div role="tablist" className="tabs tabs-bordered w-[80vw]">
+    <div role="tablist" className="tabs tabs-bordered w-[80vw] ">
       <input
         type="radio"
         name="my_tabs_1"
         role="tab"
         id="tab1"
-        className="tab text-xl text-base-200 h-[100px]"
+        className="tab text-xl text-base-200 h-[100px] mr-[50px]"
         aria-label="14 January 2024"
         checked={activeTab === 1}
         onChange={() => handleTabChange(1)}
@@ -79,7 +79,7 @@ const Tabs = () => {
         name="my_tabs_2"
         role="tab"
         id="tab2"
-        className="tab text-xl text-base-200 h-[100px] w-[800px]"
+        className="tab text-xl text-base-200 h-[100px] mr-[50px]"
         aria-label="15 January 2024"
         checked={activeTab === 2}
         onChange={() => handleTabChange(2)}

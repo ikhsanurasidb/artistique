@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowBack, ArrowForward } from "./button";
 import Link from "next/link";
 import Carousel from "./carousel.tsx";
+import AOSWrapper from '../Parallax/AOSWrapper';
 
 const ArtCategory = ({ category, isColorBgLight }) => {
   const carouselRef = useRef(null);
@@ -29,7 +30,7 @@ const ArtCategory = ({ category, isColorBgLight }) => {
   return (
     <div className="ml-20">
       <Link href={`/menu/arts/${artsCategory.dir}`}>
-        <p className="text-xl text-base-200 underline underline-offset-8 mb-8">
+        <p data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" className="text-xl text-base-200 underline underline-offset-8 mb-8">
           {category}
         </p>
       </Link>

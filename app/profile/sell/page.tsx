@@ -76,7 +76,7 @@ export default function SellPage() {
 
   console.log(fileUrl);
   return (
-    <div className="flex justify-center items-center m-auto w-[80vh] h-[60vh] rounded glass">
+    <div className="flex justify-center items-center m-auto w-[80vh] h-auto rounded glass pt-[30px] pb-[30px]">
       <div className="grid gap-4 p-8">
         <form onSubmit={handleBothSubmits}>
           <input

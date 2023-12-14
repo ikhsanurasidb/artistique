@@ -96,7 +96,7 @@ export default function Carousel({ carouselRef, textColor }) {
           <div
             className="carousel-item flex-auto mr-16 p-4 bg-accent rounded-lg shadow-lg"
             onClick={() => openPopup(item)}
-          >
+            >
             <Link href="">
               <div
                 onClick={refresh}
@@ -107,13 +107,20 @@ export default function Carousel({ carouselRef, textColor }) {
                   alt="foto karya"
                   width={250}
                   height={250}
+                  className="border rounded-lg"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
                 />
               </div>
             </Link>
           </div>
-          <div className="flex relative">
-            <div className="flex-initial max-w-[252px]">
-              <p className="text-xl text-base-200 mt-4">{item.nama_karya}</p>
+          <div className="flex relative justify-between" 
+            data-aos="fade-right"
+            data-aos-duration="1100"
+            data-aos-once="true">
+            <div className="flex-initial w-[252px]">
+              <p className="text-xl text-base-200 mt-4 overflow-hidden whitespace-nowrap overflow-ellipsis">{item.nama_karya}</p>
               <p className={textColor}>
                 {item.first_name} {item.last_name}
               </p>
@@ -124,7 +131,7 @@ export default function Carousel({ carouselRef, textColor }) {
                 <div
                   className="flex-none"
                   onClick={() => handleCart(item.nama_karya)}
-                >
+                  >
                   <CartIcon />
                 </div>
               </button>
