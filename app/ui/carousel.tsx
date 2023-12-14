@@ -111,9 +111,9 @@ export default function Carousel({ carouselRef, textColor }) {
               </div>
             </Link>
           </div>
-          <div className="flex relative">
-            <div className="flex-initial max-w-[252px]">
-              <p className="text-xl text-base-200 mt-4">{item.nama_karya}</p>
+          <div className="flex relative justify-between">
+            <div className="flex-initial w-[252px]">
+              <p className="text-xl text-base-200 mt-4 overflow-hidden whitespace-nowrap overflow-ellipsis">{item.nama_karya}</p>
               <p className={textColor}>
                 {item.first_name} {item.last_name}
               </p>

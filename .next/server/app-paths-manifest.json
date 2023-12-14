@@ -1,9 +1,7 @@
 {
-  "/login/page": "app/login/page.js",
-  "/signup/page": "app/signup/page.js",
   "/page": "app/page.js",
-  "/api/getProductsFromDB/route": "app/api/getProductsFromDB/route.js",
-  "/api/getUserSession/route": "app/api/getUserSession/route.js",
-  "/profile/page": "app/profile/page.js",
-  "/profile/cart/page": "app/profile/cart/page.js"
+  "/menu/arts/painting/page": "app/menu/arts/painting/page.js",
+  "/menu/auction/page": "app/menu/auction/page.js",
+  "/menu/auction/bid/page": "app/menu/auction/bid/page.js",
+  "/menu/arts/photography/page": "app/menu/arts/photography/page.js"
 }
