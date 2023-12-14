@@ -1,7 +1,4 @@
 {
   "/page": "app/page.js",
-  "/menu/arts/painting/page": "app/menu/arts/painting/page.js",
-  "/menu/auction/page": "app/menu/auction/page.js",
-  "/menu/auction/bid/page": "app/menu/auction/bid/page.js",
-  "/menu/arts/photography/page": "app/menu/arts/photography/page.js"
+  "/api/getProductsFromDB/route": "app/api/getProductsFromDB/route.js"
 }

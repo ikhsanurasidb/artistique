@@ -12,6 +12,7 @@ import ArtCategory from "./ui/arts-carousel";
 import Artists from "./ui/artists-carousel";
 import Footer from "./ui/Footer";
 import Link from "next/link";
+import AOSWrapper from '../app/Parallax/AOSWrapper';
 
 const Hero = () => {
   return (
@@ -69,13 +70,15 @@ const Hero = () => {
 
 const AuctionArea = () => {
   return (
+    
     <div className="mt-32" id="auction-area">
       <div className="min-h-[10vh] text-center p-4">
         <a className="text-2xl tracking-[.2em] mt-2 text-base-200 font-bold lg:text-5xl">
           Auction
         </a>
       </div>
-      <div className="flex gap-8 items-center justify-center min-h-[80vh] bg-neutral">
+      <AOSWrapper>
+      <div lass="code code--small code--left aos-init aos-animate" data-aos="zoom-out-up" data-aos-duration="2000" className="flex gap-8 items-center justify-center min-h-[80vh]">
         <ArrowBack buttonColor={"btn-primary"} />
         <Card
           className="flex-1 p-8 bg-primary text-base-200"
@@ -125,6 +128,7 @@ const AuctionArea = () => {
         </Card>
         <ArrowForward buttonColor={"btn-primary"} />
       </div>
+    </AOSWrapper>
     </div>
   );
 };
@@ -133,7 +137,7 @@ const ArtsArea = () => {
   return (
     <div className="bg-neutral mt-32" id="arts-area">
       <div className="min-h-[10vh] p-4 ">
-        <p className="text-2xl tracking-[.2em] text-center text-base-200 font-bold mb-16 lg:text-5xl">
+        <p className="text-2xl tracking-[.2em] text-center text-base-200 font-bold mb-16 lg:text-5xl mt-[30px]">
           Arts
         </p>
         <ArtCategory category="Painting" isColorBgLight={true} />
@@ -142,6 +146,7 @@ const ArtsArea = () => {
         <ArtCategory category="Photography" isColorBgLight={true} />
       </div>
     </div>
+    
   );
 };
 
