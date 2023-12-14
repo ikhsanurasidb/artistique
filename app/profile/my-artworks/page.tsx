@@ -72,8 +72,8 @@ export default function Main() {
         <div className="h-[70vh] w-[850px] bg-scroll overflow-y-scroll">
           {artworksData.map((item: Item) => (
             <div key={item.nama_karya}>
-              <div className="h-[30%] w-[800px] rounded-[10px] bg-[#B9BFC9] mb-[20px] grid grid-cols-9 justify-items-center content-center items-center">
-                <div className="h-[160px] w-[120px] p-4 bg-white rounded-[10px] ml-2 col-span-2 flex">
+              <div className="h-[200px] w-[800px] rounded-[10px] bg-[#B9BFC9] mb-[20px] grid grid-cols-9 justify-items-center content-center items-center">
+                <div className="h-[150px] w-[120px] p-4 bg-white rounded-[10px] ml-2 col-span-2 flex">
                   <div className="m-auto">
                     <Image
                       src={item.image_url}

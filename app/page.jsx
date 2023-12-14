@@ -78,7 +78,7 @@ const AuctionArea = () => {
         </a>
       </div>
       <AOSWrapper>
-      <div lass="code code--small code--left aos-init aos-animate" data-aos="zoom-out-up" data-aos-duration="2000" className="flex gap-8 items-center justify-center min-h-[80vh]">
+      <div data-aos="zoom-out-up" data-aos-duration="2000" className="flex gap-8 items-center justify-center min-h-[80vh]">
         <ArrowBack buttonColor={"btn-primary"} />
         <Card
           className="flex-1 p-8 bg-primary text-base-200"

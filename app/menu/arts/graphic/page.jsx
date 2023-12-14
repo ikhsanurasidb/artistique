@@ -1,4 +1,4 @@
-import TemplatePage from "../template-page";
+import TemplatePage from "../c-page";
 
 export default function Main() {
   return (
