@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import itemData from "../lib/data";
@@ -42,6 +42,19 @@ export default function Carousel({ carouselRef, textColor }) {
     fetchData();
   }, []);
 
+  const handleCart = async (nama_karya) => {
+    const response = await fetch("/api/postItemCart", {
+      method: "POST",
+      body: JSON.stringify({
+        nama_karya: nama_karya,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add item");
+    }
+  };
+
   console.log(productData[0]);
 
   const openPopup = (item) => {
@@ -67,10 +80,13 @@ export default function Carousel({ carouselRef, textColor }) {
             onClick={() => openPopup(item)}
           >
             <Link href="">
-              <div onClick={refresh} className="carousel-item h-[250px] w-[250px] justify-center">
+              <div
+                onClick={refresh}
+                className="carousel-item h-[250px] w-[250px] justify-center"
+              >
                 <Image
                   src={item.image_url}
-                  alt='foto karya'
+                  alt="foto karya"
                   width={250}
                   height={250}
                 />
@@ -86,9 +102,11 @@ export default function Carousel({ carouselRef, textColor }) {
               <p className={textColor}>Rp {item.harga}</p>
             </div>
             <div className="flex flex-col-reverse">
-              <div className="flex-none">
-                <CartIcon />
-              </div>
+              <button>
+                <div className="flex-none" onClick={() => handleCart(item.nama_karya)}>
+                  <CartIcon />
+                </div>
+              </button>
             </div>
             <div className="flex-none w-[64px]"></div>
           </div>

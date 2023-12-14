@@ -3,9 +3,9 @@ import Hero from "../../components/hero";
 
 export default function Main({}) {
   return (
-    <div className="mt-[10vh] bg-neutral">
+    <div className="grid gap-16 mt-[10vh] bg-neutral">
       <Hero />
-      <div className="">
+      <div className="flex justify-center items-center">
         <Tabs />
       </div>
     </div>

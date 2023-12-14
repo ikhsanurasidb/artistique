@@ -6,10 +6,9 @@ export async function GET() {
   
   try {
     const session = await getServerSession();
-    console.log(session);
     // 
     const result = await sql`
-          SELECT nama_karya, deskripsi, harga, image_url, first_name, last_name FROM carts
+          SELECT nama_karya, deskripsi, harga, image_url, first_name, last_name FROM products
         `;
     const products = result.rows;
 

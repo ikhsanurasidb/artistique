@@ -6,7 +6,6 @@ export async function GET() {
   
   try {
     const session = await getServerSession();
-    console.log(session);
     // 
     const result = await sql`
           SELECT email, first_name, last_name, image_url FROM users

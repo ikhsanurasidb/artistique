@@ -6,7 +6,6 @@ export async function GET() {
   
   try {
     const session = await getServerSession();
-    console.log(session);
     // 
     const result = await sql`
           SELECT nama_karya, deskripsi, harga, image_url FROM carts

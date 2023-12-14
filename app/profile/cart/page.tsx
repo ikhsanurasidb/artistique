@@ -11,6 +11,7 @@ interface CartItem {
 
 export default function Main() {
   const [cartData, setCartData] = useState([]);
+  const [shouldRerender, setShouldRerender] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +32,27 @@ export default function Main() {
     };
 
     fetchData();
-  }, []);
+  }, [shouldRerender]); // Include shouldRerender in the dependency array
+
+  const handleRemoveItem = async (nama_karya) => {
+    try {
+      const response = await fetch("/api/removeItemCart", {
+        method: "DELETE",
+        body: JSON.stringify({
+          nama_karya: nama_karya,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to remove item");
+      }
+
+      // Trigger a re-render by updating shouldRerender
+      setShouldRerender((prev) => !prev);
+    } catch (error) {
+      console.error("Error removing item", error);
+    }
+  };
 
   console.log(cartData);
 
@@ -43,7 +64,7 @@ export default function Main() {
   const formattedSubtotal = subtotal.toLocaleString();
 
   return (
-    <div className="h-[90vh] w-[100vw] bg-neutral relative flex flex row">
+    <div className="h-[90vh] w-[100vw] bg-neutral relative flex row">
       <div className="h-[90vh] w-[70%] flex flex-col items-center pt-[50px]">
         <div className="h-[40px] w-[850px] mb-4 text-[30px] font-medium">
           <p>My Cart</p>
@@ -68,9 +89,9 @@ export default function Main() {
                 <div className="text-[18px] font-semibold col-span-3">
                   <p>{item.harga.toLocaleString()}</p>
                 </div>
-                <RemoveCircleRoundedIcon
-                // onClick={() => handleRemoveItem(item)}
-                />
+                <button onClick={() => handleRemoveItem(item.nama_karya)}>
+                  <RemoveCircleRoundedIcon />
+                </button>
               </div>
             </div>
           ))}

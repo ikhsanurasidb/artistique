@@ -2,21 +2,6 @@
 
 const PriceInput = () => {
 
-  const handleInputChange = (event) => {
-    // Remove non-digit characters
-    const rawValue = event.target.value.replace(/\D/g, "");
-
-    // Check if the parsed value is a valid number
-    const parsedValue = parseInt(rawValue, 10);
-    if (!isNaN(parsedValue)) {
-      // Set input value as a valid number
-      setInputValue(parsedValue);
-    } else {
-      // Keep the original input value if it's not a valid number
-      setInputValue(rawValue);
-    }
-  };
-
   return (
     <>
       <input

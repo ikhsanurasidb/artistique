@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import UploadForm from "../../components/upload-form";
@@ -7,11 +8,22 @@ import { useState } from "react";
 import path from "path";
 
 export default function SellPage() {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | undefined>(undefined);
+  const [fileUrl, setFileUrl] = useState<string | undefined>(undefined);
   const [uploading, setUploading] = useState(false);
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    const file = e.target.files[0];
+    setFile(file);
+
+    if (fileUrl) URL.revokeObjectURL(fileUrl);
+
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setFileUrl(url);
+    } else {
+      setFileUrl(undefined);
+    }
   };
 
   const handleSubmitForm = async (e) => {
@@ -19,8 +31,8 @@ export default function SellPage() {
     if (!file) return;
 
     setUploading(true);
-    const formData = new FormData();
-    formData.append("file", file);
+    const formElement = document.querySelector("form");
+    const formData = new FormData(formElement);
 
     try {
       const response = await fetch("/api/s3-upload", {
@@ -39,40 +51,89 @@ export default function SellPage() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-
-    // Ambil path dari path-config.json
+    const formElement = document.querySelector("form");
+    const formData = new FormData(formElement);
+  
     try {
       const response = await fetch("/api/upload-karya", {
         method: "POST",
-        body: JSON.stringify({
-          nama_karya: formData.get("nama_karya"),
-          deskripsi: formData.get("deskripsi"),
-          harga: formData.get("harga"),
-          image_url: `https://artistique-filestorage.s3.ap-southeast-1.amazonaws.com/`,
-        }),
+        body: formData, // send formData directly
       });
       console.log(response);
     } catch (error) {
+      alert("Nama karya yang sama sudah ada!");
       console.log(error);
     }
   };
+  
 
   const handleBothSubmits = async (e) => {
     e.preventDefault();
 
-    await handleSubmit(e as FormEvent<HTMLFormElement>);
     await handleSubmitForm(e);
+    await handleSubmit(e as FormEvent<HTMLFormElement>);
   };
 
+  console.log(fileUrl);
   return (
     <div className="flex justify-center items-center m-auto w-[80vh] h-[60vh] rounded glass">
       <div className="grid gap-4 p-8">
         <form onSubmit={handleBothSubmits}>
-          <KaryaForm />
-          <input type="file" className="file-input file-input-bordered w-full max-w-xs" accept="image/*" onChange={handleFileChange}/>
-          <br/>
-          <br/>
+          <input
+            name="nama_karya"
+            type="text"
+            placeholder="Nama Karya"
+            className="input input-bordered w-full max-w-xs text-neutral"
+          />
+          <br />
+          <br />
+          <input
+            name="deskripsi"
+            type="text"
+            className="textarea textarea-bordered text-neutral"
+            placeholder="Deskripsi"
+          ></input>
+          <br />
+          <br />
+          <input
+            name="harga"
+            type="number"
+            placeholder="Harga"
+            className="input input-bordered w-full max-w-xs text-neutral"
+          />
+          <br />
+          <br />
+          {fileUrl && file && (
+            <div className="flex gap-4 justify-center items-center">
+              <div className="rounded-lg overflow-hidden w-32 h-32 relative mb-4">
+                <img
+                  src={fileUrl}
+                  alt={file.name}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <button
+                type="button"
+                className="border rounded-xl px-4 py-2 w-32 h-10"
+                onClick={() => {
+                  setFile(undefined);
+                  setFileUrl(undefined);
+                }}
+              >
+                Remove
+              </button>
+            </div>
+          )}
+
+          <input
+            type="file"
+            className="file-input file-input-bordered w-full max-w-xs"
+            name="media"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
+          <br />
+          <br />
           <button type="submit" className="btn btn-base-200 text-neutral">
             {uploading ? "Uploading..." : "Upload"}
           </button>

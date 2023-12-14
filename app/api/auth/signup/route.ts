@@ -6,7 +6,6 @@ export async function POST(request: Request){
     try {
         const {first_name, last_name, email, password} = await request.json();
         //tambahkan disini jika mau validasi email dan password
-        console.log({first_name, last_name, email, password});
 
         const hashedPassword = await hash(password, 10);
 

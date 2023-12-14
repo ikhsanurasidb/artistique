@@ -28,7 +28,6 @@ const authOptions: NextAuthOptions = {
           user?.password
         );
 
-        console.log({ passwordCorrect });
 
         if (passwordCorrect) {
           return {
@@ -37,7 +36,6 @@ const authOptions: NextAuthOptions = {
           };
         }
 
-        console.log({ credentials });
         return null;
       },
     }),
