@@ -20,7 +20,7 @@ export default function Form() {
       router.push("/");
       router.refresh();
     } else {
-      alert("Login failed");
+      alert("Login failed, password or email is incorrect.");
     }
   };
   return (

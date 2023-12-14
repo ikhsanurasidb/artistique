@@ -1,8 +1,10 @@
 "use client";
 
 import { FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Form() {
+  const router = useRouter();
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -16,6 +18,13 @@ export default function Form() {
       }),
     });
     console.log(response);
+
+    if (response.ok) {
+      alert("Signup successful!");
+      router.push("/login");
+    } else if (!response.ok) {
+      alert("Signup failed, please try again.");
+    }
   };
   return (
     <div className="hero min-h-screen bg-neutral">
