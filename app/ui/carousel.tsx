@@ -42,16 +42,34 @@ export default function Carousel({ carouselRef, textColor }) {
     fetchData();
   }, []);
 
-  const handleCart = async (nama_karya) => {
-    const response = await fetch("/api/postItemCart", {
-      method: "POST",
-      body: JSON.stringify({
-        nama_karya: nama_karya,
-      }),
+  const handleSession = async () => {
+    const response = await fetch("/api/getUserSession", {
+      method: "GET",
     });
+    console.log(response);
 
-    if (!response.ok) {
-      throw new Error("Failed to add item");
+    return response.json();
+  };
+
+  const handleCart = async (nama_karya) => {
+    const session = await handleSession();
+    console.log(session);
+
+    if (session !== null) {
+      const response = await fetch("/api/postItemCart", {
+        method: "POST",
+        body: JSON.stringify({
+          nama_karya: nama_karya,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add item");
+      } else {
+        alert("Item added to cart!");
+      }
+    }else{
+      alert("Please login first!");
     }
   };
 
@@ -103,7 +121,10 @@ export default function Carousel({ carouselRef, textColor }) {
             </div>
             <div className="flex flex-col-reverse">
               <button>
-                <div className="flex-none" onClick={() => handleCart(item.nama_karya)}>
+                <div
+                  className="flex-none"
+                  onClick={() => handleCart(item.nama_karya)}
+                >
                   <CartIcon />
                 </div>
               </button>
