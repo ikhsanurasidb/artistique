@@ -107,7 +107,7 @@ function AddAuction() {
           <br />
           <input
             name="waktu"
-            min={`${minDate}T00:00`}
+            // min={`${minDate}T00:00`}
             type="datetime-local"
             placeholder="Kategori"
             className="input input-bordered w-full max-w-xs text-neutral"

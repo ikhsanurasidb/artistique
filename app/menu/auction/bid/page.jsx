@@ -5,19 +5,6 @@ export default function Main() {
   return (
     <div className="flex mt-[10vh] h-[90vh] bg-neutral">
       <div className="flex m-auto">
-        {/* <div className="w-64">
-          <div className="w-[300px] h-[300px]">
-            <Image
-              src="/image-list-2.jpg"
-              height={300}
-              width={300}
-              alt="artwork"
-            ></Image>
-          </div>
-        </div>
-        <div className="w-32">
-          <p className="text-base-200">Deskripsi</p>
-        </div> */}
         <div className="card lg:card-side bg-base-100 shadow-xl">
           <figure>
             <img src="/image-list-2.jpg" alt="Album" />
