@@ -1,61 +1,16 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/profile/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/profile/page.js"
-    ],
-    "/profile/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/profile/layout.js"
-    ],
-    "/menu/arts/painting/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/menu/arts/painting/page.js"
-    ],
-    "/menu/artists/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/menu/artists/page.js"
-    ],
-    "/profile/sell/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/profile/sell/page.js"
-    ],
-    "/profile/cart/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/profile/cart/page.js"
-    ],
-    "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
-    ],
-    "/profile/my-artworks/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/profile/my-artworks/page.js"
-    ],
-    "/menu/arts/graphic/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/menu/arts/graphic/page.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ]
   }
 }
