@@ -1,9 +1,9 @@
 {
-  "/page": "app/page.js",
   "/login/page": "app/login/page.js",
-  "/api/getProfileFromDB/route": "app/api/getProfileFromDB/route.js",
+  "/page": "app/page.js",
+  "/menu/arts/graphic/page": "app/menu/arts/graphic/page.js",
   "/api/getProductsFromDB/route": "app/api/getProductsFromDB/route.js",
   "/profile/cart/page": "app/profile/cart/page.js",
-  "/profile/sell/page": "app/profile/sell/page.js",
-  "/profile/page": "app/profile/page.js"
+  "/profile/page": "app/profile/page.js",
+  "/profile/my-artworks/page": "app/profile/my-artworks/page.js"
 }
