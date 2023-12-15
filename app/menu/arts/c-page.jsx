@@ -21,6 +21,7 @@ export default function Main({ category, carouselRef, textColor, isColorBgLight 
           method: "POST",
           body: JSON.stringify({
             kategori: category,
+            isArtists: false,
           }),
         });
 

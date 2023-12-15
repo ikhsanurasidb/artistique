@@ -24,7 +24,7 @@ export default function Main({ category }) {
                 </div>
               </Link>
             </div>
-            <div className="grid grid-cols-9 grid place-items-end w-[282px]">
+            <div className="grid grid-cols-9 place-items-end w-[282px]">
               <div className="col-start-1 col-span-8">
                 <p className="text-xl text-base-200 mt-4">Apaan Ya Namanya</p>
                 <p className="text-base-200">

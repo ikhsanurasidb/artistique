@@ -6,7 +6,7 @@ import Link from "next/link";
 import Carousel from "./carousel.tsx";
 import Image from "next/image";
 
-const ArtCategory = ({ category, isColorBgLight }) => {
+const ArtCategory = ({ category, isColorBgLight, first_name, last_name }) => {
   const carouselRef = useRef(null);
   const textColor = isColorBgLight ? "text-base-100" : "text-neutral";
   const buttonColor = isColorBgLight ? "btn-accent" : "btn-neutral";
@@ -33,7 +33,7 @@ const ArtCategory = ({ category, isColorBgLight }) => {
         <p className="text-xl text-base-200 mt-4">Steve</p>
         <p className="text-neutral">Deskripsi singkat test 123 </p>
         </div>
-        <Carousel isCarousel={true} carouselRef={carouselRef} textColor={textColor} />
+        <Carousel isArtists={true} carouselRef={carouselRef} textColor={textColor} first_name={first_name} last_name={last_name}/>
       </div>
       <div className="mt-2 mb-8">
         <div className="flex flex-row-reverse">

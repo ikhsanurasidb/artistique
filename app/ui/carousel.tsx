@@ -15,7 +15,7 @@ interface ProductItem {
   last_name: string;
 }
 
-export default function Carousel({ carouselRef, textColor, kategori }) {
+export default function Carousel({ carouselRef, textColor, kategori, isArtists, first_name, last_name }) {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [productData, setProductData] = useState([]);
@@ -27,6 +27,9 @@ export default function Carousel({ carouselRef, textColor, kategori }) {
           method: "POST",
           body: JSON.stringify({
             kategori: kategori,
+            isArtists: isArtists,
+            first_name: first_name,
+            last_name: last_name,
           })
         });
 
@@ -45,7 +48,7 @@ export default function Carousel({ carouselRef, textColor, kategori }) {
     };
 
     fetchData();
-  }, [kategori]);
+  }, [kategori, isArtists, first_name, last_name]);
 
   const handleSession = async () => {
     const response = await fetch("/api/getUserSession", {

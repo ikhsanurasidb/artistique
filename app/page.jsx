@@ -158,8 +158,8 @@ const ArtistsArea = () => {
           Artists
         </p>
         <div className="bg-primary w-[100%] rounded p-4">
-          <Artists isColorBgLight={false} />
-          <Artists isColorBgLight={false} />
+          <Artists isColorBgLight={false} first_name='Ikhsan' last_name='Nurasid'/>
+          <Artists isColorBgLight={false} first_name='rakha' last_name='naufal'/>
         </div>
       </div>
     </div>
