@@ -7,7 +7,7 @@ export default function Main({}) {
     <div className="grid gap-16 mt-[10vh] bg-neutral">
       <Hero />
       <div className="flex justify-center items-center">
-      {/* <Clock /> */}
+      <Clock />
       </div>
       <div className="flex justify-center items-center">
         <Tabs />
