@@ -8,9 +8,9 @@ export async function GET() {
     const session = await getServerSession();
     // 
     const result = await sql`
-    SELECT *
+    SELECT DISTINCT waktu
     FROM auctions
-    WHERE DATE_TRUNC('day', waktu) > CURRENT_DATE;    
+    WHERE DATE_TRUNC('day', waktu) > CURRENT_DATE;   
         `;
     const dates = result.rows;
 

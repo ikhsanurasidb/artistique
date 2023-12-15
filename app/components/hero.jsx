@@ -29,33 +29,105 @@ export default function Main() {
     fetchData();
   }, []);
 
+  const Modal = ({ nama_karya, harga_final, image_url, modalId, pemenang }) => {
+    const [bidValue, setBidValue] = useState("");
+
+    const handleBidChange = (e) => {
+      setBidValue(e.target.value);
+    };
+
+    const handleFormSubmit = async (e) => {
+      e.preventDefault();
+
+      // Memastikan nilai bid lebih besar atau sama dengan harga minimal
+      if (Number(bidValue) <= harga_final || bidValue === null) {
+        alert("Bid harus lebih besar atau sama dengan harga minimal");
+      } else {
+        const formData = new FormData(e.currentTarget);
+        const response = await fetch("/api/postAuctionBid", {
+          method: "POST",
+          body: JSON.stringify({
+            harga_final: formData.get("harga_final"),
+            nama_karya: nama_karya,
+          }),
+        });
+        
+        if (response.ok) {
+          console.log("Bid berhasil dipost");
+          // Reload halaman setelah bid berhasil dipost
+          window.location.reload();
+        }
+      }
+    };
+
+    return (
+      <div>
+        <button
+          className="outline outline-offset-2 glass btn text-neutral p-4 rounded-md hover:text-neutral "
+          onClick={() => document.getElementById(modalId).showModal()}
+        >
+          Bid Now
+        </button>
+        <dialog id={modalId} className="modal">
+          <div className="modal-box w-11/12 max-w-5xl">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <div className=" absolute right-2 top-2">press esc to close</div>
+            </form>
+            <h3 className="font-bold text-lg mb-8">{nama_karya}</h3>
+            <div className="grid grid-cols-2 gap-16">
+              <div>
+                <img src={image_url} alt="auction artwork" />
+              </div>
+              <form onSubmit={handleFormSubmit}>
+                <div className="grid gap-4 text-left">
+                  <p className="text-neutral">Harga Terakhir: {harga_final}</p>
+                  <p className="text-neutral">Pemenang Sementara: {pemenang}</p>
+                  <input
+                    name="harga_final"
+                    type="number"
+                    min={harga_final}
+                    placeholder="Bid disini"
+                    className="input input-bordered w-full max-w-xs"
+                    value={bidValue}
+                    onChange={handleBidChange}
+                  />
+                  <button type="submit" className="btn btn-outline btn-neutral">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    );
+  };
+
   return (
     <div>
       {live ? (
         <div className="h-[90vh] carousel rounded-box">
           {auctions.map((auction, index) => (
-            <div
-              key={index}
-              className="carousel-item hero w-full"
-              // style={{
-              //   backgroundImage: `url(${auction.image_url})`,
-              // }}
-            >
-                <img
-                  src={auction.image_url}
-                  alt="blabla"
-                  className=" object-cover w-[90vw] h-[80vh] rounded-md"
-                />
+            <div key={index} className="carousel-item hero w-full">
+              <img
+                src={auction.image_url}
+                alt="blabla"
+                className=" object-cover w-[90vw] h-[80vh] rounded-md"
+              />
               <div className="hero-content w-full h-full text-center ">
                 <div className="max-w-md">
-                  <h1 className="glass mb-5 text-5xl font-bold text-base-200 p-4 rounded-md z-1">
-                    Live Auction NOW!
+                  <h1 className="glass mb-5 text-5xl font-bold text-neutral p-4 rounded-md z-1">
+                    {/* Live Auction NOW! */}
+                    {auction.nama_karya}
                   </h1>
-                  <Link href="../menu/auction/bid/">
-                    <button className="outline outline-offset-2 glass btn text-base-200 p-4 rounded-md hover:text-neutral z-1">
-                      Enter the Room
-                    </button>
-                  </Link>
+                  <Modal
+                    nama_karya={auction.nama_karya}
+                    harga_final={auction.harga_final}
+                    image_url={auction.image_url}
+                    modalId={`my_modal_${index}`}
+                    pemenang={auction.pemenang}
+                  />
                 </div>
               </div>
             </div>

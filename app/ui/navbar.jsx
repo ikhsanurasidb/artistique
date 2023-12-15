@@ -6,6 +6,7 @@ import { SignUpButton, LoginButton } from "./button";
 import { CartIcon } from "./icons";
 import { getServerSession } from "next-auth";
 import LogoutButton from "../logout";
+import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
 const ArtistiqueLogo = () => {
   return (
@@ -68,28 +69,11 @@ const CartAndProfile = () => {
   return (
     <div className="flex-none">
       <div className="dropdown dropdown-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle">
-          <div className="indicator">
-            <CartIcon />
-            <span className="badge badge-sm indicator-item">8</span>
-          </div>
+        <label tabIndex={0} className="btn btn-ghost btn-circle text-base-200">
+          <Link href="/profile/cart">
+            <ShoppingCartRoundedIcon fontSize="large" />
+          </Link>
         </label>
-        <div
-          tabIndex={0}
-          className="mt-3 z-[1] card card-compact dropdown-content w-full lg:w-52 bg-base-100 shadow"
-        >
-          <div className="card-body">
-            <span className="font-bold text-lg">8 Items</span>
-            <span className="text-neutral">Subtotal: $999</span>
-            <div className="card-actions">
-              <Link href="/profile/cart">
-                <button className="btn btn-primary btn-block text-neutral">
-                  View cart
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
       <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -124,7 +108,7 @@ const CartAndProfile = () => {
   );
 };
 
-export default async function Navbar(){
+export default async function Navbar() {
   const session = await getServerSession();
   return (
     <div className="z-50 navbar glass flex flex-col lg:flex-row items-center gap-4 p-4 fixed top-0 w-[100vw]">
@@ -139,4 +123,4 @@ export default async function Navbar(){
       {!!session && <CartAndProfile />}
     </div>
   );
-};
+}

@@ -33,8 +33,8 @@ export async function POST(request: Request) {
       (nama_karya + "-" + file.name);
 
     const sqlResponse = await sql`
-            INSERT INTO auctions (email, nama_karya, kategori, deskripsi, harga_minimal, waktu, image_url, first_name, last_name)
-            VALUES (${email}, ${nama_karya}, ${kategori}, ${deskripsi}, ${harga_minimal}, ${waktu}, ${image_url}, ${first_name}, ${last_name})
+            INSERT INTO auctions (email, nama_karya, kategori, deskripsi, harga_minimal, harga_final, waktu, image_url, first_name, last_name)
+            VALUES (${email}, ${nama_karya}, ${kategori}, ${deskripsi}, ${harga_minimal}, ${harga_minimal}, ${waktu}, ${image_url}, ${first_name}, ${last_name})
         `;
   } catch (e) {
     console.error(e); 

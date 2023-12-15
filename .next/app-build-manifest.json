@@ -51,6 +51,21 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/profile/sell/page.js"
+    ],
+    "/menu/arts/painting/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/arts/painting/page.js"
+    ],
+    "/menu/arts/sculpture/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/arts/sculpture/page.js"
+    ],
+    "/menu/arts/photography/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/arts/photography/page.js"
     ]
   }
 }
