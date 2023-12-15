@@ -27,7 +27,7 @@ export const Menu = () => {
   const artsCategory = [
     { name: "Painting", dir: "painting" },
     { name: "Sculpture", dir: "sculpture" },
-    { name: "Graphic Arts", dir: "graphic" },
+    { name: "Digital Arts", dir: "graphic" },
     { name: "Photography", dir: "photography" },
   ];
 

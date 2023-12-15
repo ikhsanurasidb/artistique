@@ -30,8 +30,8 @@ const ArtCategory = ({ category, isColorBgLight }) => {
       <div className="flex p-8">
         <div className="flex flex-col min-w-[17.75rem] my-8 mr-16 p-4 bg-accent rounded-lg shadow-lg">
         <Image src="/artist.jpg" alt="arts" width={250} height={250} />
-        <p className="text-xl text-base-200 mt-4">Nama Artist</p>
-        <p className="text-neutral">Deskripsi singkat test 123 123321 qwertyoiuo</p>
+        <p className="text-xl text-base-200 mt-4">Steve</p>
+        <p className="text-neutral">Deskripsi singkat test 123 </p>
         </div>
         <Carousel isCarousel={true} carouselRef={carouselRef} textColor={textColor} />
       </div>
