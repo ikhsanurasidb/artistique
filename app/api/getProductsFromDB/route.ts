@@ -5,14 +5,24 @@ import { getServerSession } from "next-auth";
 export async function POST(request: Request) {
   
   try {
-    const {kategori} = await request.json();
+    const {kategori, isArtists, first_name, last_name} = await request.json();
+    var products = [];
     // 
+    if(!isArtists){
     const result = await sql`
           SELECT nama_karya, deskripsi, harga, image_url, first_name, last_name 
           FROM products
           WHERE kategori = ${kategori};
         `;
-    const products = result.rows;
+    products = result.rows;
+    }else{
+      const result = await sql`
+          SELECT nama_karya, deskripsi, harga, image_url, first_name, last_name 
+          FROM products
+          WHERE kategori = ${kategori} AND first_name = ${first_name} AND last_name = ${last_name};
+        `;
+      products = result.rows;
+    }
 
     return NextResponse.json(products);
   } catch (error) {

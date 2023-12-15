@@ -34,7 +34,7 @@ const ArtCategory = ({ category, isColorBgLight }) => {
           {category}
         </p>
       </Link>
-      <Carousel isCarousel={true} carouselRef={carouselRef} textColor={textColor} kategori={category}/>
+      <Carousel isCarousel={true} isArtists={false} carouselRef={carouselRef} textColor={textColor} kategori={category}/>
       <div className="mt-2 mb-8">
         <div className="flex flex-row-reverse">
           <div onClick={() => scrollCarousel("right")}>
