@@ -8,13 +8,6 @@ export default function Main({  }) {
         </h1>
         <div className="">
           <ArtistsCarousel isColorBgLight={true}/>
-          <ArtistsCarousel isColorBgLight={true}/>
-          <ArtistsCarousel isColorBgLight={true}/>
-          <ArtistsCarousel isColorBgLight={true}/>
-          <ArtistsCarousel isColorBgLight={true}/> 
-          <ArtistsCarousel isColorBgLight={true}/>
-          <ArtistsCarousel isColorBgLight={true}/>
-          <ArtistsCarousel isColorBgLight={true}/>
         </div>
       </div>
     );

@@ -1,7 +1,8 @@
 {
   "/page": "app/page.js",
-  "/menu/auction/page": "app/menu/auction/page.js",
   "/menu/artists/page": "app/menu/artists/page.js",
-  "/menu/arts/painting/page": "app/menu/arts/painting/page.js",
-  "/menu/arts/sculpture/page": "app/menu/arts/sculpture/page.js"
+  "/menu/arts/graphic/page": "app/menu/arts/graphic/page.js",
+  "/api/getProductsFromDB/route": "app/api/getProductsFromDB/route.js",
+  "/profile/page": "app/profile/page.js",
+  "/profile/my-artworks/page": "app/profile/my-artworks/page.js"
 }

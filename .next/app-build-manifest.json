@@ -71,6 +71,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/menu/auction/page.js"
+    ],
+    "/menu/auction/bid/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/auction/bid/page.js"
     ]
   }
 }
