@@ -56,13 +56,6 @@ export default function Main() {
 
   console.log(artworksData);
 
-  const totalProducts = artworksData.length;
-  const subtotal = artworksData.reduce(
-    (acc, item) => acc + parseInt(item.harga),
-    0
-  );
-  const formattedSubtotal = subtotal.toLocaleString();
-
   return (
     <div className="h-[90vh] w-[100vw] bg-neutral relative flex row">
       <div className="h-[90vh] w-[100%] flex flex-col items-center pt-[50px]">
