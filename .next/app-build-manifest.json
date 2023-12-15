@@ -56,6 +56,31 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/profile/auction/page.js"
+    ],
+    "/profile/cart/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profile/cart/page.js"
+    ],
+    "/menu/artists/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/artists/page.js"
+    ],
+    "/menu/arts/sculpture/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/arts/sculpture/page.js"
+    ],
+    "/menu/arts/photography/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/arts/photography/page.js"
+    ],
+    "/menu/auction/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/auction/page.js"
     ]
   }
 }

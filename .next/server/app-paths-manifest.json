@@ -1,12 +1,12 @@
 {
   "/page": "app/page.js",
-  "/login/page": "app/login/page.js",
-  "/signup/page": "app/signup/page.js",
-  "/api/s3-upload/route": "app/api/s3-upload/route.js",
-  "/api/upload-karya/route": "app/api/upload-karya/route.js",
-  "/api/getMyArtwork/route": "app/api/getMyArtwork/route.js",
+  "/menu/artists/page": "app/menu/artists/page.js",
   "/api/getProductsFromDB/route": "app/api/getProductsFromDB/route.js",
-  "/profile/sell/page": "app/profile/sell/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/profile/my-artworks/page": "app/profile/my-artworks/page.js"
+  "/menu/arts/sculpture/page": "app/menu/arts/sculpture/page.js",
+  "/menu/arts/graphic/page": "app/menu/arts/graphic/page.js",
+  "/menu/arts/photography/page": "app/menu/arts/photography/page.js",
+  "/menu/auction/page": "app/menu/auction/page.js",
+  "/api/getAuctionLive/route": "app/api/getAuctionLive/route.js",
+  "/api/getAuctionDates/route": "app/api/getAuctionDates/route.js",
+  "/api/getAuctionArtworks/route": "app/api/getAuctionArtworks/route.js"
 }
