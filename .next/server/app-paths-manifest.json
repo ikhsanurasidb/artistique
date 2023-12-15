@@ -1,17 +1,13 @@
 {
-<<<<<<< HEAD
   "/page": "app/page.js",
-  "/menu/artists/page": "app/menu/artists/page.js",
-  "/menu/arts/graphic/page": "app/menu/arts/graphic/page.js",
-  "/menu/arts/painting/page": "app/menu/arts/painting/page.js",
+  "/api/removeItemCart/route": "app/api/removeItemCart/route.js",
+  "/api/getFromDB/route": "app/api/getFromDB/route.js",
   "/api/getProductsFromDB/route": "app/api/getProductsFromDB/route.js",
+  "/api/getUserSession/route": "app/api/getUserSession/route.js",
+  "/api/postItemCart/route": "app/api/postItemCart/route.js",
+  "/api/getMyArtwork/route": "app/api/getMyArtwork/route.js",
+  "/profile/cart/page": "app/profile/cart/page.js",
+  "/profile/my-artworks/page": "app/profile/my-artworks/page.js",
   "/profile/page": "app/profile/page.js",
-  "/profile/my-artworks/page": "app/profile/my-artworks/page.js"
-=======
-  "/menu/auction/page": "app/menu/auction/page.js",
-  "/page": "app/page.js",
-  "/menu/auction/bid/page": "app/menu/auction/bid/page.js",
-  "/profile/auction/page": "app/profile/auction/page.js",
-  "/profile/page": "app/profile/page.js"
->>>>>>> 45286e17273ac5e69f1cd87d624edfebae24f403
+  "/profile/sell/page": "app/profile/sell/page.js"
 }
