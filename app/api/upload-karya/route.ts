@@ -24,6 +24,7 @@ export async function POST(request: Request) {
     const nama_karya = formData.get("nama_karya") as string;
     const deskripsi = formData.get("deskripsi") as string;
     const harga = formData.get("harga") as string;
+    const kategori = formData.get("kategori") as string;
 
     const file = formData.get("media") as File;
     const image_url =
@@ -31,8 +32,8 @@ export async function POST(request: Request) {
       (nama_karya + "-" + file.name);
 
     const sqlResponse = await sql`
-            INSERT INTO products (email, nama_karya, deskripsi, harga, image_url, first_name, last_name)
-            VALUES (${email}, ${nama_karya}, ${deskripsi}, ${harga}, ${image_url}, ${first_name}, ${last_name})
+            INSERT INTO products (email, nama_karya, deskripsi, harga, image_url, first_name, last_name, kategori)
+            VALUES (${email}, ${nama_karya}, ${deskripsi}, ${harga}, ${image_url}, ${first_name}, ${last_name}, ${kategori})
         `;
   } catch (e) {
     console.error(e); 

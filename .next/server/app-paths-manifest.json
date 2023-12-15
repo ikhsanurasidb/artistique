@@ -1,5 +1,4 @@
 {
-  "/menu/artists/page": "app/menu/artists/page.js",
   "/menu/arts/sculpture/page": "app/menu/arts/sculpture/page.js",
   "/profile/page": "app/profile/page.js",
   "/profile/cart/page": "app/profile/cart/page.js",

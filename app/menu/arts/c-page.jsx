@@ -18,7 +18,10 @@ export default function Main({ category, carouselRef, textColor, isColorBgLight 
     const fetchData = async () => {
       try {
         const res = await fetch("/api/getProductsFromDB", {
-          method: "GET",
+          method: "POST",
+          body: JSON.stringify({
+            kategori: category,
+          }),
         });
 
         if (!res.ok) {
@@ -34,7 +37,7 @@ export default function Main({ category, carouselRef, textColor, isColorBgLight 
     };
 
     fetchData();
-  }, []);
+  }, [category]);
 
   const handleSession = async () => {
     const response = await fetch("/api/getUserSession", {
