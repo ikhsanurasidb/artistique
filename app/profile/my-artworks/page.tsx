@@ -65,7 +65,7 @@ export default function Main() {
 
   return (
     <div className="h-[90vh] w-[100vw] bg-neutral relative flex row">
-      <div className="h-[90vh] w-[70%] flex flex-col items-center pt-[50px]">
+      <div className="h-[90vh] w-[100%] flex flex-col items-center pt-[50px]">
         <div className="h-[40px] w-[850px] mb-4 text-[30px] font-medium">
           <p>My Artworks</p>
         </div>
@@ -95,20 +95,6 @@ export default function Main() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-      <div className="h-[90vh] w-[30%] flex flex-col items-center pt-[110px]">
-        <div className="h-[250px] w-[250px] bg-[#C1C4C9] rounded-[15px] flex flex-col p-[20px]">
-          <div className="h-[70%] w-[100%] flex flex-col">
-            <div className="relative flex flex-col items-center">
-              <p className="text-[31px] font-medium mb-[-5px]">Summary</p>
-              <div className="h-[1.5px] w-[200px] bg-black mb-[10px]"></div>
-            </div>
-            <p className="text-[18px]">Total Product : {totalProducts}</p>
-            <p className="text-[20px] font-semibold">
-              Subtotal : Rp {formattedSubtotal}
-            </p>
-          </div>
         </div>
       </div>
     </div>

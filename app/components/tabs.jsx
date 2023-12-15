@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-
 import React, { useState, useEffect } from "react";
 
 const Tabs = () => {
@@ -75,7 +74,7 @@ const Tabs = () => {
   };
 
   return (
-    <div role="tablist" className="tabs tabs-bordered w-[80vw] ">
+    <div role="tablist" className="tabs tabs-bordered w-[80vw] gap-[50px]">
       {dates.map((date, index) => (
         <div key={index}>
           <input
@@ -83,7 +82,7 @@ const Tabs = () => {
             name="my_tabs_1"
             role="tab"
             id={`tab${index + 1}`}
-            className="tab text-xl text-base-200 h-[100px] mr-[50px] focus:underline"
+            className="tab text-xl text-base-200 h-[100px] mr-[50px] focus:underline bg-accent pr-[80%] border border-black border-[2px] rounded-[20px]"
             aria-label={date.waktu}
             checked={activeTab === index + 1}
             onChange={() => handleTabChange(index + 1)}

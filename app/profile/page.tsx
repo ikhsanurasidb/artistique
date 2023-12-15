@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import Image from "next/image";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import { useEffect, useState } from "react";
 
@@ -42,16 +41,15 @@ export default function Main() {
       <div className="flex bg-accent w-[100%] h-[100%] m-auto rounded-xl">
         <div className="grid grid-cols-2 gap-8 m-auto content-center">
           <div className="flex flex-col justify-end items-end">
-            <div className="w-[300px] h-[300px] glass p-4 rounded-md">
-              <img
-                src={profileData[0]?.image_url}
-                width={300}
-                height={300}
-                alt="Profile-photo. 
-                Please upload a photo if you haven't already."
-                className="rounded-md"
-              />
-            </div>
+          <div className="w-[300px] h-[300px] glass p-4 rounded-md flex flex-col items-center justify-center">
+            <img
+              src={profileData[0]?.image_url}
+              width={200}
+              height={200}
+              alt="Profile-photo. Please upload a photo if you haven't already."
+              className="rounded-md"
+            />
+          </div>
             <div className="grid grid-cols-3 gap-4 mt-4 w-[295px]">
               <button className="btn btn-lg btn-neutral outline-dashed outline-2 outline-offset-2 outline-primary">
                 Save

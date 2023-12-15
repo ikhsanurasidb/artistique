@@ -85,7 +85,7 @@ export default function Main({ category, carouselRef, textColor, isColorBgLight 
 
   return (
     // ...
-<div className="mt-[10vh] bg-neutral">
+<div className="mt-[10vh] bg-neutral pl-[50px]">
   <h1 className="text-4xl text-center text-base-200 pt-8 mb-[40px]">
     {category.toUpperCase()}
   </h1>
@@ -93,7 +93,7 @@ export default function Main({ category, carouselRef, textColor, isColorBgLight 
     {productData.map((item) => (
       <div
         key={item.nama_karya}
-        className="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 p-4"
+        className="max-w-[100vw] flex flex-col justify-center items-center"
       >
         <div
           className="carousel-item flex-auto mr-16 p-4 bg-accent rounded-lg shadow-lg"
@@ -118,7 +118,7 @@ export default function Main({ category, carouselRef, textColor, isColorBgLight 
           </Link>
         </div>
         <div
-          className="flex relative justify-between"
+          className="flex relative justify-between mb-[50px]"
           data-aos="fade-right"
           data-aos-duration="1100"
           data-aos-once="true"
