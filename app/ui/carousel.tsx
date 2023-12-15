@@ -15,7 +15,7 @@ interface ProductItem {
   last_name: string;
 }
 
-export default function Carousel({ carouselRef, textColor }) {
+export default function Carousel({ carouselRef, textColor, kategori }) {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [productData, setProductData] = useState([]);
@@ -24,7 +24,10 @@ export default function Carousel({ carouselRef, textColor }) {
     const fetchData = async () => {
       try {
         const res = await fetch("/api/getProductsFromDB", {
-          method: "GET",
+          method: "POST",
+          body: JSON.stringify({
+            kategori: kategori,
+          })
         });
 
         if (!res.ok) {
@@ -33,14 +36,16 @@ export default function Carousel({ carouselRef, textColor }) {
 
         const data = await res.json();
         console.log(data);
-        setProductData(data); // Update state with fetched data
+        setProductData(data);
+        return; // Update state with fetched data
       } catch (error) {
         console.error("Error fetching data", error);
+        return;
       }
     };
 
     fetchData();
-  }, []);
+  }, [kategori]);
 
   const handleSession = async () => {
     const response = await fetch("/api/getUserSession", {

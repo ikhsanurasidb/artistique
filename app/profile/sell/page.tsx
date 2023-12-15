@@ -53,7 +53,7 @@ export default function SellPage() {
     e.preventDefault();
     const formElement = document.querySelector("form");
     const formData = new FormData(formElement);
-  
+
     try {
       const response = await fetch("/api/upload-karya", {
         method: "POST",
@@ -65,7 +65,6 @@ export default function SellPage() {
       console.log(error);
     }
   };
-  
 
   const handleBothSubmits = async (e) => {
     e.preventDefault();
@@ -85,6 +84,17 @@ export default function SellPage() {
             placeholder="Nama Karya"
             className="input input-bordered w-full max-w-xs text-neutral"
           />
+          <br />
+          <br />
+          <select name="kategori" className="select w-full max-w-xs text-neutral">
+            <option disabled selected>
+              Pilih kategori
+            </option>
+            <option>Painting</option>
+            <option>Sculpture</option>
+            <option>Photography</option>
+            <option>Digital Art</option>
+          </select>
           <br />
           <br />
           <input

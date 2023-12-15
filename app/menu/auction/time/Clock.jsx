@@ -37,7 +37,7 @@ function Clock() {
       <div className=''>
         <p>Date & Time : {format(currentDateTime, 'MMMM dd, yyyy HH:mm:ss')}</p>
       </div>
-      <div className='w-[500px] border border-[2px] border-black p-[10px] rounded-[10px]'>
+      <div className='w-[500px] border-[2px] border-black p-[10px] rounded-[10px]'>
         <Calendar
           onChange={handleCalendarChange}
           value={currentDateTime}
