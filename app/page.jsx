@@ -239,7 +239,7 @@ const DetailProduct = () => {
 
 export default function Home() {
   return (
-      <div className="bg-neutral">
+      <div className="bg-neutral overflow-y-hidden">
         <Hero />
         <AuctionArea />
         <ArtsArea />
